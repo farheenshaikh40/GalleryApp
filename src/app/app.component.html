@@ -18,3 +18,29 @@
   </li>
 </ul>
 
+
+<h3>{{ title }}</h3>
+<div class="row">
+  <button class="btn btn-lg btn-info" [class.active]="filterBy == 'all'" (click)="filterBy='all'">All</button>
+  <button class="btn btn-lg btn-info" [class.active]="filterBy == 'cats'" (click)="filterBy='cats'">Cats</button>
+  <button class="btn btn-lg btn-info" [class.active]="filterBy == 'dogs'" (click)="filterBy='dogs'">Dogs</button>
+  <button class="btn btn-lg btn-info" [class.active]="filterBy == 'hanster'" (click)="filterBy='hamster'">Hamster</button>
+  <ul id="thumbanilList">
+    <li *ngFor="let image of visibleImages">
+      <img [src]="image.url" class="tn" width="200" height="160">
+    </li>
+  </ul>
+</div>
+
+<div class="row">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand logo">
+          {{ title }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
